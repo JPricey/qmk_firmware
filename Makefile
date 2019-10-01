@@ -545,6 +545,24 @@ ifdef SKIP_VERSION
 SKIP_GIT := yes
 endif
 
+# .PHONY: joe.hex
+# joe.hex:
+# 	make handwired/dactyl_manuform/5x6:joe:avrdude
+
+
+# .PHONY: joe.hex
+# joe.hex:
+# 	make handwired/dactyl_manuform/4x6:joe-tight:avrdude
+
+.PHONY: joe.hex
+joe.hex:
+	make handwired/dactyl_manuform/4x6:joe-tight:teensy
+
+.PHONY: alex.hex
+alex.hex:
+	make alex/teensy2:classic:teensy
+
+# make <my_keyboard>:<my_keymap>:avrdude
 # Generate the version.h file
 ifndef SKIP_GIT
     GIT_VERSION := $(shell git describe --abbrev=6 --dirty --always --tags 2>/dev/null || date +"%Y-%m-%d-%H:%M:%S")
