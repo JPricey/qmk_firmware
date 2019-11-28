@@ -615,6 +615,10 @@ ifdef SKIP_VERSION
 SKIP_GIT := yes
 endif
 
+.PHONY: alex.hex
+alex.hex:
+	make alex/teensy2:classic:teensy
+
 # Generate the version.h file
 ifndef SKIP_GIT
     GIT_VERSION := $(shell git describe --abbrev=6 --dirty --always --tags 2>/dev/null || date +"%Y-%m-%d-%H:%M:%S")
