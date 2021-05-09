@@ -550,13 +550,13 @@ endif
 # 	make handwired/dactyl_manuform/5x6:joe:avrdude
 
 
-# .PHONY: joe.hex
-# joe.hex:
-# 	make handwired/dactyl_manuform/4x6:joe-tight:avrdude
-
 .PHONY: joe.hex
 joe.hex:
-	make handwired/dactyl_manuform/4x6:joe-tight:teensy
+	make handwired/dactyl_manuform/4x6:joe-tight:avrdude
+
+# .PHONY: joe.hex
+# joe.hex:
+# 	make handwired/dactyl_manuform/4x6:joe-tight:teensy
 
 .PHONY: alex.hex
 alex.hex:
